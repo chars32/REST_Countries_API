@@ -19,4 +19,5 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 10% 30% 60%;
+  overflow: scroll;
 }
