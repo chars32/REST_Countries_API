@@ -1,0 +1,31 @@
+.flagsContainer {
+  justify-self: center;
+  width: 70%;
+  overflow: scroll;
+}
+
+.flagContainer {
+  border-radius: 10px;
+  background: white;
+  margin-bottom: 15%;
+}
+
+.flagContainer img {
+  width: 100%;
+}
+
+.flagContainerInfo {
+  padding: 10%;
+}
+
+.flagContainerInfo h3 {
+  margin: 10% 0;
+}
+
+.flagContainerInfo p {
+  font-weight: 600;
+}
+
+.flagContainerInfo p span {
+  font-weight: 300;
+}

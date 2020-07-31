@@ -1,0 +1,29 @@
+.searchFilterContainer {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  padding: 0 5%;
+}
+
+.searchContainer {
+  align-self: center;
+}
+
+.searchContainer input {
+  padding: 5% 10%;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 0px 0px 4px 0px rgb(230, 230, 230);
+}
+
+.searchFilterContainer input::placeholder {
+  color: gray;
+}
+
+.selectRegion {
+  padding: 5% 10%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px rgb(230, 230, 230);
+}

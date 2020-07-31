@@ -1,0 +1,22 @@
+:root {
+  --dark-mode-elements: hsl(209, 23%, 22%);
+  --dark-mode-background: hsl(207, 26%, 17%);
+  --light-mode-text: hsl(200, 15%, 8%);
+  --light-mode-input: hsl(0, 0%, 52%);
+  --light-mode-background: hsl(0, 0%, 98%);
+  --dark-mode-text-light-mode-elements: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--light-mode-background);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 30% 60%;
+}
