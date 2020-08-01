@@ -2,18 +2,22 @@ import React from "react";
 
 import "./searchFilter.css";
 
-const Searchfilter = () => {
+const Searchfilter = (props) => {
   return (
     <div className="searchFilterContainer">
       <div className="searchContainer">
         <input
+          className={props.dark ? "darkSearchContainer" : ""}
           type="text"
           name="searchFlags"
           placeholder="&#128269; Search for country..."
         />
       </div>
       <div className="selectContainer">
-        <select className="selectRegion" required>
+        <select
+          className={`selectRegion ${props.dark ? "darkSearchContainer" : ""}`}
+          required
+        >
           <option disabled value="filter" selected>
             Filter by region
           </option>

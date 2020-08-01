@@ -4,13 +4,16 @@ import { flagsList } from "../flagsList";
 
 import "./flags.css";
 
-const Flags = () => {
+const Flags = (props) => {
   // console.log(flagsList[0].name);
   return (
     <div className="flagsContainer">
       {flagsList.map((data, key) => {
         return (
-          <div className="flagContainer" key={key}>
+          <div
+            className={`flagContainer ${props.dark ? "darkFlagContainer" : ""}`}
+            key={key}
+          >
             <img src={data.flag} alt="" />
             <div className="flagContainerInfo">
               <h3>{data.name}</h3>

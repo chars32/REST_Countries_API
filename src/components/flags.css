@@ -7,6 +7,7 @@
   border-radius: 10px;
   background: white;
   margin-bottom: 15%;
+  overflow: hidden;
 }
 
 .flagContainer img {
@@ -27,4 +28,9 @@
 
 .flagContainerInfo p span {
   font-weight: 300;
+}
+
+.darkFlagContainer {
+  background-color: var(--dark-mode-elements);
+  color: white;
 }

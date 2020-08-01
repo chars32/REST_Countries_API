@@ -1,6 +1,5 @@
 .Header {
   align-items: center;
-  background-color: var(--dark-mode-text-light-mode-elements);
   display: grid;
   grid-template-columns: 50% 50%;
   padding: 0 5%;
@@ -11,8 +10,16 @@
 }
 
 .Darkmode {
+  align-content: center;
   display: flex;
   justify-content: flex-end;
+  width: 65%;
+  justify-self: flex-end;
+}
+
+.Darkmode img {
+  padding: 0 5%;
+  width: 15%;
 }
 
 .Darkmode p {
@@ -22,4 +29,13 @@
 .moonsvg {
   width: 9%;
   padding: 0 5%;
+}
+
+.lightHeader {
+  background-color: var(--dark-mode-text-light-mode-elements);
+}
+
+.darkHeader {
+  background-color: var(--dark-mode-elements);
+  color: white;
 }

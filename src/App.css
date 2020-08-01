@@ -14,10 +14,17 @@
 
 .App {
   font-family: "Nunito Sans", sans-serif;
-  background-color: var(--light-mode-background);
+  /* background-color: var(--light-mode-background); */
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-rows: 10% 30% 60%;
   overflow: scroll;
+}
+.lightApp {
+  background-color: var(--light-mode-background);
+}
+
+.darkApp {
+  background-color: var(--dark-mode-background);
 }
