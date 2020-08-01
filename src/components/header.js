@@ -6,7 +6,6 @@ import moon from "../img/svg/001-moon.svg";
 import sun from "../img/svg/sun (1).svg";
 
 const Header = (props) => {
-  console.log(props);
   return (
     <div className={`Header ${props.dark ? "darkHeader" : "lightHeader"}`}>
       <p>Where in the world?</p>

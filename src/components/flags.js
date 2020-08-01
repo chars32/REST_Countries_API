@@ -5,7 +5,6 @@ import { flagsList } from "../flagsList";
 import "./flags.css";
 
 const Flags = (props) => {
-  // console.log(flagsList[0].name);
   return (
     <div className="flagsContainer">
       {flagsList.map((data, key) => {
