@@ -16,9 +16,9 @@ const Searchfilter = (props) => {
       <div className="selectContainer">
         <select
           className={`selectRegion ${props.dark ? "darkSearchContainer" : ""}`}
-          required
+          defaultValue="filter"
         >
-          <option disabled value="filter" selected>
+          <option disabled value="filter">
             Filter by region
           </option>
           <option value="Africa">Africa</option>
