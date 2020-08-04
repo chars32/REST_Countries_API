@@ -3,14 +3,16 @@ import React from "react";
 import "./searchFilter.css";
 
 const Searchfilter = (props) => {
+
   return (
     <div className="searchFilterContainer">
       <div className="searchContainer">
         <input
-          className={props.dark ? "darkSearchContainer" : ""}
+          className={`enterInput ${props.dark ? "darkSearchContainer" : ""}`}
           type="text"
           name="searchFlags"
           placeholder="&#128269; Search for country..."
+          onKeyPress={props.search}
         />
       </div>
       <div className="selectContainer">
