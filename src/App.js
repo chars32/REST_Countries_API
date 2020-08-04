@@ -5,8 +5,7 @@ import Header from "./components/header";
 import Searchfilter from "./components/searchFilter";
 import Flags from "./components/flags";
 
-import AllFlags from "./scripts/data";
-import FilterByRegionFlags from "./scripts/data";
+const {AllFlags, FilterByRegionFlags} = require ('./scripts/data')
 
 const App = () => {
   const [dark, setDark] = useState(false);
