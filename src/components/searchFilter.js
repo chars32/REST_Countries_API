@@ -17,12 +17,14 @@ const Searchfilter = (props) => {
         <select
           className={`selectRegion ${props.dark ? "darkSearchContainer" : ""}`}
           defaultValue="filter"
+          onChange={props.filter}
+          onClick={props.handlerFilter}
         >
           <option disabled value="filter">
             Filter by region
           </option>
           <option value="Africa">Africa</option>
-          <option value="America">America</option>
+          <option value="Americas">America</option>
           <option value="Asia">Asia</option>
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>

@@ -5,7 +5,6 @@ import { flagsList } from "../flagsList";
 import "./flags.css";
 
 const Flags = (props) => {
-  console.log(props.flagsData);
   return (
     <div className="flagsContainer">
       {props.flagsData
