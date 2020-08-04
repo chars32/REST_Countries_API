@@ -7,11 +7,14 @@ import Flags from "./components/flags";
 
 import AllFlags from './scripts/data'
 import FilterByRegionFlags from './scripts/filter'
+import SearchFlags from './scripts/search'
 
 
 const App = () => {
   const [dark, setDark] = useState(false);
   const [flagsInfo, setFlagsInfo] = useState();
+
+  // handlers
 
   const handlerClick = () => {
     setDark(!dark);
@@ -25,11 +28,21 @@ const App = () => {
     })();
   };
 
+  const handlerSearch = (event) => {
+    if (event.key === "Enter") {
+      (async function () {
+        const data = await SearchFlags(event.target.value)
+        setFlagsInfo(data)
+      })();
+    }
+  }
+
+  // function  
   const allFLgagsData = async () => {
     const data = await AllFlags();
     setFlagsInfo(data);
   };
-
+  
   useEffect(() => {
     allFLgagsData();
   }, []);
@@ -37,7 +50,7 @@ const App = () => {
   return (
     <div className={`App ${dark ? "darkApp" : "lightApp"}`}>
       <Header mode={handlerClick} dark={dark} />
-      <Searchfilter dark={dark} filter={handlerRegion} />
+      <Searchfilter dark={dark} filter={handlerRegion} search={handlerSearch} />
       <Flags dark={dark} flagsData={flagsInfo} />
     </div>
   );
