@@ -5,10 +5,9 @@ import Header from "./components/header";
 import Searchfilter from "./components/searchFilter";
 import Flags from "./components/flags";
 
-import AllFlags from './scripts/data'
-import FilterByRegionFlags from './scripts/filter'
-import SearchFlags from './scripts/search'
-
+import AllFlags from "./scripts/data";
+import FilterByRegionFlags from "./scripts/filter";
+import SearchFlags from "./scripts/search";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -20,29 +19,24 @@ const App = () => {
     setDark(!dark);
   };
 
-  const handlerRegion = (e) => {
-    const filterData = FilterByRegionFlags(e.target.value);
-    (async function () {
-      const data = await filterData;
-      setFlagsInfo(data);
-    })();
+  const handlerRegion = async (e) => {
+    const filterData = await FilterByRegionFlags(e.target.value);
+    setFlagsInfo(filterData);
   };
 
-  const handlerSearch = (event) => {
+  const handlerSearch = async (event) => {
     if (event.key === "Enter") {
-      (async function () {
-        const data = await SearchFlags(event.target.value)
-        setFlagsInfo(data)
-      })();
+      const data = await SearchFlags(event.target.value);
+      setFlagsInfo(data);
     }
-  }
+  };
 
-  // function  
+  // function
   const allFLgagsData = async () => {
     const data = await AllFlags();
     setFlagsInfo(data);
   };
-  
+
   useEffect(() => {
     allFLgagsData();
   }, []);
