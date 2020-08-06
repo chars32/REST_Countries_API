@@ -14,7 +14,6 @@ const App = () => {
   const [flagsInfo, setFlagsInfo] = useState();
 
   // handlers
-
   const handlerClick = () => {
     setDark(!dark);
   };
@@ -24,11 +23,18 @@ const App = () => {
     setFlagsInfo(filterData);
   };
 
-  const handlerSearch = async (event) => {
-    if (event.key === "Enter") {
-      const data = await SearchFlags(event.target.value);
-      setFlagsInfo(data);
+  const handleChange = async (event) => {
+    if (event.target.value) {
+      handlerSearch(event.target.value);
+    } else {
+      allFLgagsData();
     }
+  };
+
+  const handlerSearch = async (country) => {
+    console.log(country);
+    const data = await SearchFlags(country);
+    setFlagsInfo(data);
   };
 
   // function
@@ -37,6 +43,7 @@ const App = () => {
     setFlagsInfo(data);
   };
 
+  // Seting flags info
   useEffect(() => {
     allFLgagsData();
   }, []);
@@ -44,7 +51,7 @@ const App = () => {
   return (
     <div className={`App ${dark ? "darkApp" : "lightApp"}`}>
       <Header mode={handlerClick} dark={dark} />
-      <Searchfilter dark={dark} filter={handlerRegion} search={handlerSearch} />
+      <Searchfilter dark={dark} filter={handlerRegion} change={handleChange} />
       <Flags dark={dark} flagsData={flagsInfo} />
     </div>
   );
