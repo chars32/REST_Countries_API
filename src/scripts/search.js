@@ -1,7 +1,13 @@
 const SearchFlags = async (country) => {
-  const call_api = await fetch (`https://restcountries.eu/rest/v2/name/${country}`)
-  const data = call_api.json()
-  return data
-}
+  try {
+    const call_api = await fetch(
+      `https://restcountries.eu/rest/v2/name/${country}`
+    );
+    const data = call_api.json();
+    return data;
+  } catch (error) {
+    console.log("error");
+  }
+};
 
-export default SearchFlags
+export default SearchFlags;
