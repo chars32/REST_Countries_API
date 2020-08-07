@@ -5,9 +5,7 @@ import Header from "./components/header";
 import Searchfilter from "./components/searchFilter";
 import Flags from "./components/flags";
 
-import AllFlags from "./scripts/data";
-import FilterByRegionFlags from "./scripts/filter";
-import SearchFlags from "./scripts/search";
+import flagsInfoData from "./scripts/allData";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -19,7 +17,7 @@ const App = () => {
   };
 
   const handlerRegion = async (e) => {
-    const filterData = await FilterByRegionFlags(e.target.value);
+    const filterData = await flagsInfoData.getByRegion(e.target.value);
     setFlagsInfo(filterData);
   };
 
@@ -32,14 +30,13 @@ const App = () => {
   };
 
   const handlerSearch = async (country) => {
-    console.log(country);
-    const data = await SearchFlags(country);
+    const data = await flagsInfoData.getBySearch(country);
     setFlagsInfo(data);
   };
 
   // function
   const allFLgagsData = async () => {
-    const data = await AllFlags();
+    const data = await flagsInfoData.getAll();
     setFlagsInfo(data);
   };
 
